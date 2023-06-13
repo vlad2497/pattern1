@@ -1,10 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
 
 const links = [
-  { url: "/", title: "Home" },
-  { url: "/genres", title: "Genres" },
-  { url: "/info", title: "Info" },
-];
+  { url: '/', title: 'Home' },
+  { url: '/genres', title: 'Genres' },
+  { url: '/info', title: 'Info' },
+]
 
 const Header = () => {
   return (
@@ -16,15 +16,15 @@ const Header = () => {
           to={url}
           style={({ isActive }) =>
             isActive
-              ? { color: "red", paddingRight: "10px" }
-              : { color: "blue", paddingRight: "10px" }
+              ? { color: 'red', paddingRight: '10px' }
+              : { color: 'blue', paddingRight: '10px' }
           }
         >
           {title}
         </NavLink>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

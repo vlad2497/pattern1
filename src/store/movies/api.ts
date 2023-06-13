@@ -1,7 +1,7 @@
-import { createApi } from "@reduxjs/toolkit/query/react";
-import endpoints from "@/config/endpoints";
-import { baseQuery, DEFAULT_QUERY_PARAMS } from "../config";
-import { Movie, MovieCreateBody } from "./types";
+import { createApi } from '@reduxjs/toolkit/query/react'
+import endpoints from '@/config/endpoints'
+import { baseQuery, DEFAULT_QUERY_PARAMS } from '../config'
+import { Movie, MovieCreateBody } from './types'
 
 // Обновить кэш определенного запроса в другом апи срезе
 // reducerPath - moviesApi.reducerPath
@@ -11,9 +11,9 @@ import { Movie, MovieCreateBody } from "./types";
 // });
 
 export const moviesApi = createApi({
-  reducerPath: "moviesApi",
+  reducerPath: 'moviesApi',
   baseQuery,
-  tagTypes: ["Movies"],
+  tagTypes: ['Movies'],
   // keepUnusedDataFor: 20,
   // refetchOnMountOrArgChange: true, // сбросить кэш при монтировании
   endpoints: (builder) => ({
@@ -23,7 +23,7 @@ export const moviesApi = createApi({
         params: DEFAULT_QUERY_PARAMS,
       }),
       keepUnusedDataFor: 5, // время жизни кэша
-      providesTags: ["Movies"], // название кэша
+      providesTags: ['Movies'], // название кэша
     }),
     getMovieById: builder.query<Movie, number>({
       query: (id) => ({
@@ -34,7 +34,7 @@ export const moviesApi = createApi({
     saveMovie: builder.mutation<MovieCreateBody, Movie>({
       query: (body) => ({
         url: endpoints.movies.create,
-        method: "POST",
+        method: 'POST',
         body,
       }),
       // invalidatesTags: ['Movies'] // сбросить кэш
@@ -42,13 +42,13 @@ export const moviesApi = createApi({
     updateMovie: builder.mutation<Partial<MovieCreateBody>, Movie>({
       query: ({ id, ...patch }) => ({
         url: endpoints.movies.getDetail(id),
-        method: "PATCH",
+        method: 'PATCH',
         body: patch,
       }),
     }),
   }),
-});
+})
 
-export const { useGetMoviesListQuery, useGetMovieByIdQuery } = moviesApi;
+export const { useGetMoviesListQuery, useGetMovieByIdQuery } = moviesApi
 
-export const selectMovies = moviesApi.endpoints.getMoviesList.select();
+export const selectMovies = moviesApi.endpoints.getMoviesList.select()

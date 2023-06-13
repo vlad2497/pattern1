@@ -1,5 +1,5 @@
 const NoMatch = () => {
-  return <div>Нет такой страницы!</div>;
-};
+  return <div>Нет такой страницы!</div>
+}
 
-export default NoMatch;
+export default NoMatch

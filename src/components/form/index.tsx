@@ -1,12 +1,12 @@
-import { Button } from "@mui/material";
-import { useForm, SubmitHandler, Controller } from "react-hook-form";
-import TextField from "../text-field";
-import { nameValidation } from "./validation";
+import { Button } from '@mui/material'
+import { useForm, SubmitHandler, Controller } from 'react-hook-form'
+import TextField from '../text-field'
+import { nameValidation } from './validation'
 
 interface IForm {
-  fullName: string;
-  age: string;
-  surName: string;
+  fullName: string
+  age: string
+  surName: string
 }
 
 const CustomForm = () => {
@@ -17,14 +17,14 @@ const CustomForm = () => {
     formState: { errors },
   } = useForm<IForm>({
     defaultValues: {
-      surName: "",
-      fullName: "",
-      age: "25",
+      surName: '',
+      fullName: '',
+      age: '25',
     },
-  });
-  const onSubmit: SubmitHandler<IForm> = (data) => console.log(data);
+  })
+  const onSubmit: SubmitHandler<IForm> = (data) => console.log(data)
 
-  console.log(watch("fullName"));
+  console.log(watch('fullName'))
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -37,14 +37,14 @@ const CustomForm = () => {
             {...field}
             ref={null}
             role="surname-text-field"
-            error={Boolean(errors["surName"])}
+            error={Boolean(errors['surName'])}
             helperText={
               <span role="surname-text-field-helper-text">
-                {errors["surName"]?.message || ""}
+                {errors['surName']?.message || ''}
               </span>
             }
             inputProps={{
-              role: "surname-input",
+              role: 'surname-input',
             }}
           />
         )}
@@ -58,10 +58,10 @@ const CustomForm = () => {
           <TextField
             {...field}
             ref={null}
-            error={Boolean(errors["fullName"])}
-            helperText={errors["fullName"]?.message || ""}
+            error={Boolean(errors['fullName'])}
+            helperText={errors['fullName']?.message || ''}
             inputProps={{
-              role: "fullname-input",
+              role: 'fullname-input',
             }}
           />
         )}
@@ -76,7 +76,7 @@ const CustomForm = () => {
             {...field}
             ref={null}
             inputProps={{
-              role: "age-input",
+              role: 'age-input',
             }}
           />
         )}
@@ -84,7 +84,7 @@ const CustomForm = () => {
       <br />
       <Button type="submit">Создать</Button>
     </form>
-  );
-};
+  )
+}
 
-export default CustomForm;
+export default CustomForm

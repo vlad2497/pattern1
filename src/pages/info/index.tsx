@@ -1,4 +1,4 @@
-import Header from "@/components/header";
+import Header from '@/components/header'
 // import { useAppSelector } from "@/store";
 // import { selectMovies } from "@/store/movies/api";
 // import { moviesApi } from "@/store/movies/api";
@@ -37,7 +37,7 @@ const Info = () => {
         Перезагрузить
       </button> */}
     </>
-  );
-};
+  )
+}
 
-export default Info;
+export default Info

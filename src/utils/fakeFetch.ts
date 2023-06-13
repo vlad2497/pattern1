@@ -6,11 +6,11 @@ export const getFormData = (
     setTimeout(() => {
       if (success) {
         resolve({
-          fullName: "Vlad",
-        });
+          fullName: 'Vlad',
+        })
       } else {
-        reject({ message: "Error" });
+        reject({ message: 'Error' })
       }
-    }, timeout);
-  });
-};
+    }, timeout)
+  })
+}

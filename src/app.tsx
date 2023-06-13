@@ -1,9 +1,9 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom'
 
-import Main from "@/pages/main";
-import Genres from "@/pages/genres";
-import Info from "@/pages/info";
-import NoMatch from "@/pages/no-match";
+import Main from '@/pages/main'
+import Genres from '@/pages/genres'
+import Info from '@/pages/info'
+import NoMatch from '@/pages/no-match'
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
       <Route path="/info" element={<Info />} />
       <Route path="*" element={<NoMatch />} />
     </Routes>
-  );
-};
+  )
+}
 
-export default App;
+export default App

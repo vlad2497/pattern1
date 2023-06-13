@@ -1,9 +1,9 @@
-import { createApi } from "@reduxjs/toolkit/query/react";
-import { baseQuery, DEFAULT_QUERY_PARAMS } from "../config";
-import { Genre } from "./types";
+import { createApi } from '@reduxjs/toolkit/query/react'
+import { baseQuery, DEFAULT_QUERY_PARAMS } from '../config'
+import { Genre } from './types'
 
 export const genresApi = createApi({
-  reducerPath: "genresApi",
+  reducerPath: 'genresApi',
   baseQuery,
   endpoints: (builder) => ({
     getGenresList: builder.query<Genre[], void>({
@@ -13,6 +13,6 @@ export const genresApi = createApi({
       }),
     }),
   }),
-});
+})
 
-export const { useGetGenresListQuery } = genresApi;
+export const { useGetGenresListQuery } = genresApi
