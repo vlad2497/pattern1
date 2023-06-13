@@ -1,10 +1,10 @@
-import { FC } from "react";
-import _TextField, { StandardTextFieldProps } from "@mui/material/TextField";
+import { FC } from 'react'
+import _TextField, { StandardTextFieldProps } from '@mui/material/TextField'
 
-interface IProps extends StandardTextFieldProps {}
+// interface IProps extends StandardTextFieldProps {}
 
-const TextField: FC<IProps> = (props) => {
-  return <_TextField {...props} />;
-};
+const TextField: FC<StandardTextFieldProps> = (props) => {
+  return <_TextField {...props} />
+}
 
-export default TextField;
+export default TextField
