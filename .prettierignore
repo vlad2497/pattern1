@@ -1,0 +1,8 @@
+node_modules
+public
+
+yarn.lock
+package-lock.json
+*.jpg
+*.svg
+*.png
