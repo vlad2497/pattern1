@@ -6,11 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "test": "vitest",
+    "test": "vitest run",
     "coverage": "vitest run --coverage",
     "preview": "vite preview",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "prettier": "prettier --write \"src/**/*\""
+    "prettier": "prettier --write \"src/**/*\"",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -37,6 +38,7 @@
     "eslint": "^8.42.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
+    "husky": "^8.0.3",
     "jsdom": "^22.0.0",
     "msw": "^1.2.1",
     "prettier": "^2.8.8",
