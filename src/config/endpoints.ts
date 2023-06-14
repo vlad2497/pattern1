@@ -1,7 +1,7 @@
 export default {
   movies: {
-    popular: 'movie/popular',
-    getDetail: (id: number) => `movie/${id}`,
+    popular: 'api/moviedb/movie/popular',
+    getDetail: (id: number) => `api/moviedb/movie/${id}`,
     create: 'movie/create',
     getUpdate: (id: number) => `movie/update/${id}`,
   },

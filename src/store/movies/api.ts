@@ -1,6 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
 import endpoints from '@/config/endpoints'
-import { baseQuery, DEFAULT_QUERY_PARAMS } from '../config'
+import { baseQuery } from '../config'
 import { Movie, MovieCreateBody } from './types'
 
 // Обновить кэш определенного запроса в другом апи срезе
@@ -20,7 +20,6 @@ export const moviesApi = createApi({
     getMoviesList: builder.query<{ page: number; results: Movie[] }, void>({
       query: () => ({
         url: endpoints.movies.popular,
-        params: DEFAULT_QUERY_PARAMS,
       }),
       keepUnusedDataFor: 5, // время жизни кэша
       providesTags: ['Movies'], // название кэша
@@ -28,7 +27,6 @@ export const moviesApi = createApi({
     getMovieById: builder.query<Movie, number>({
       query: (id) => ({
         url: endpoints.movies.getDetail(id),
-        params: DEFAULT_QUERY_PARAMS,
       }),
     }),
     saveMovie: builder.mutation<MovieCreateBody, Movie>({
