@@ -98,12 +98,34 @@ export const getDetail = (response: Response, id = 1) =>
     }
   )
 
+export const saveUser = (response: Response) =>
+  rest.post(`${BASE_HOST}/${endpoints.user.create}`, (req, res, ctx) => {
+    let json = null
+    if (response.type === ResponseType.Empty) json = {}
+    if (response.type === ResponseType.Success)
+      json = {
+        surName: 'surName111',
+        fullName: 'fullName111',
+        age: '11',
+      }
+    if (response.type === ResponseType.Error)
+      json = {
+        message: 'Имя обязательно !',
+      }
+
+    return res(ctx.status(response.status), ctx.json(json))
+  })
+
 export default [
   getPopular({
     type: ResponseType.Success,
     status: 200,
   }),
   getDetail({
+    type: ResponseType.Success,
+    status: 200,
+  }),
+  saveUser({
     type: ResponseType.Success,
     status: 200,
   }),

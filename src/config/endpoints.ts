@@ -5,4 +5,7 @@ export default {
     create: 'movie/create',
     getUpdate: (id: number) => `movie/update/${id}`,
   },
+  user: {
+    create: 'api/form',
+  },
 }

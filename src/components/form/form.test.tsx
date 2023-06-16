@@ -62,4 +62,24 @@ describe('form', () => {
     const helperText = screen.getByRole('surname-text-field-helper-text')
     expect(helperText).toBeInTheDocument()
   })
+
+  it('success alert is visible after submit', async () => {
+    render(<Form />, {
+      wrapper: AllProviders,
+    })
+
+    const surnameInput = screen.getByRole('surname-input') as HTMLInputElement
+    const fullnameInput = screen.getByRole('fullname-input') as HTMLInputElement
+    const ageInput = screen.getByRole('age-input') as HTMLInputElement
+    const submitButton = screen.getByRole('button') as HTMLButtonElement
+
+    const user = userEvent.setup()
+    await user.type(surnameInput, 'surname111')
+    await user.type(fullnameInput, 'fullname11')
+    await user.type(ageInput, '2')
+    await user.click(submitButton)
+
+    const alertElement = await screen.findByRole('alert')
+    expect(alertElement).toBeInTheDocument()
+  })
 })
